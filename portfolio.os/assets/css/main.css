@@ -1,6 +1,10 @@
 @import "bootstrap.css";
 @import "../../icons/font-awesome/css/font-awesome.min.css";
+@import "animate.css";
 
+.panel-default {
+    border-radius: 0px;
+}
 .header {
     height: 266px;
     background: url("../../images/background.jpeg") no-repeat bottom center;
@@ -125,4 +129,15 @@
     display: inline;
     margin-right: 5px;
     padding: 3px;
+}
+
+/* Form */
+
+input, textarea, select {
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 45px;
 }

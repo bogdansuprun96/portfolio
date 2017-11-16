@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Site</title>
     <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -32,11 +33,12 @@
                     <a class="navbar-brand" href="#">Web-Coders</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li>
                     <li><a href="#">Resume</a></li>
                     <li><a href="#">Portfolio</a></li>
                     <li><a href="#">Price</a></li>
                     <li><a href="#">FAQ</a></li>
+                    <li><a href="/order.php">Замовити сайт</a></li>
                 </ul>
             </div>
         </nav>
