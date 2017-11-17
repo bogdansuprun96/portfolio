@@ -141,3 +141,12 @@ textarea {
     resize: vertical;
     min-height: 45px;
 }
+
+.price-btn {
+    padding: 3px 12px;
+}
+
+.progress {
+    margin: 0;
+    padding: 0;
+}
