@@ -14,8 +14,15 @@
 Route::get('/', ['uses' => 'MainController@index', 'as' => 'home']);
 Route::get('/portfolio', 'MainController@portfolio');
 
-Route::auth();
-
-Route::get('/home', 'HomeController@index');
-
 Route::match(['get', 'post'], '/order', ['uses' => 'MainController@order', 'as' => 'order']);
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+    Route::group(['prefix' => 'admin'], function () {
+        Route::get('/', ['uses' => 'HomeController@index', 'as' => 'admin-index']);
+        Route::get('/profile', ['uses' => 'HomeController@profile', 'as' => 'admin-profile']);
+        Route::group(['prefix' => 'update'], function () {
+            Route::post('/profile/', ['uses' => 'HomeController@updateUser', 'as' => 'update-user']);
+        });
+    });
+});

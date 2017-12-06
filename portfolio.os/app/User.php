@@ -2,7 +2,9 @@
 
 namespace App;
 
+use App\Http\Requests\Request;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use DB;
 
 class User extends Authenticatable
 {
@@ -12,7 +14,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'phone_number',
     ];
 
     /**
@@ -23,4 +25,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public static function getAllUser()
+    {
+        $result = DB::table('users')->get();
+        return $result;
+    }
 }

@@ -75,6 +75,13 @@
     z-index: 99;
 }
 
+@-moz-document url-prefix() {
+
+    #avatar-thumbnail {
+        left: 55px;
+    }
+}
+
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
 #callback {

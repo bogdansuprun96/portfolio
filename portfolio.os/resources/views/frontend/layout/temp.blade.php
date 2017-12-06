@@ -9,10 +9,11 @@
     <link rel="icon" href="{{ asset('/favicon.ico') }}" type="image/gif">
     <title>Site</title>
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    {{--<script src="{{ asset('assets/js/jquery-3.2.1.min.js') }}"></script>--}}
+    <script src="{{ asset('assets/js/jquery-3.2.1.min.js') }}"></script>
     <script src="{{ asset('/assets/js/jquery.auto.pagination.min.js') }}"></script>
     <!--    <script src="https://unpkg.com/vue"></script>-->
+    <script src="{{ asset('/assets/js/jquery.maskedinput.min.js') }}"></script>
+
 </head>
 <body>
 <div class="container">
@@ -44,6 +45,13 @@
                     <li><a href="/price">Price</a></li>
                     <li><a href="/faq">FAQ</a></li>
                     <li><a href="/order">Замовити сайт</a></li>
+                    @if(Auth::guest())
+                        <li><a href="{{ url('/login') }}">Увійти</a></li>
+                        <li><a href="{{ url('/register') }}">Реєстрація</a></li>
+                    @else
+                        <li><a href="#">{{ Auth::user()->name }}</a></li>
+                        <li><a href="{{ url('/logout') }}">Вийти</a></li>
+                    @endif
                 </ul>
             </div>
         </nav>
